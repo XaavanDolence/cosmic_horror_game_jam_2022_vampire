@@ -1,0 +1,6 @@
+# Suggested by the offical godot site
+# https://docs.godotengine.org/en/stable/tutorials/best_practices/version_control_systems.html
+.import/
+*.translation
+export_presets.cfg
+.mono/
