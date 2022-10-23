@@ -13,9 +13,33 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
+}, {
+"base": "Actor",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/actors/StateMachineBasedPlayer.gd"
+}, {
+"base": "StateMachine",
+"class": "PlayerStateMachine",
+"language": "GDScript",
+"path": "res://src/actors/PlayerStateMachine.gd"
+}, {
+"base": "Actor",
+"class": "PushableBlock",
+"language": "GDScript",
+"path": "res://src/actors/PushableBlock.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/actors/StateMachine.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Player": "",
+"PlayerStateMachine": "",
+"PushableBlock": "",
+"StateMachine": ""
 }
 
 [application]
