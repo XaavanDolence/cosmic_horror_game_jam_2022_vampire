@@ -8,14 +8,14 @@ func _ready():
 	add_state("jump")
 	add_state("fall")
 	add_state("glide")
-	add_state("push")
 	call_deferred("set_state", states.idle)
+
 
 func _input(event: InputEvent) -> void:
 	# Handles sprite rotation.
 	parent._handle_sprite_rotation()
 	
-		# Canceling Jumps
+	# Canceling Jumps
 	if [states.jump].has(curr_state) and event.is_action_released("jump"):
 		parent._velocity.y = 0.0 # Up is negative.
 	# Jumping
@@ -29,11 +29,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("spit"):
 		parent._animated_sprite.get_child(0).visible = false
 
-# Virtual Functions to be overwritten by the inherited classes. 
+
 func _state_logic(delta):
 	parent._handle_move_input()
- 
-# returns a the next state if there is a state change, null otherwise.
+	parent._handle_pushing()
+
+
 func _get_transition(delta):
 	match curr_state:
 		states.idle:
@@ -79,7 +80,8 @@ func _get_transition(delta):
 				return states.jump
 
 	return null
-	
+
+
 func _enter_state(new_state, old_state):
 	match new_state:
 		states.idle:

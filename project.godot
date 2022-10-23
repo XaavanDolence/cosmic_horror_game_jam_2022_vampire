@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actors/PlayerStateMachine.gd"
 }, {
+"base": "Actor",
+"class": "PushableBlock",
+"language": "GDScript",
+"path": "res://src/actors/PushableBlock.gd"
+}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "Actor": "",
 "Player": "",
 "PlayerStateMachine": "",
+"PushableBlock": "",
 "StateMachine": ""
 }
 
