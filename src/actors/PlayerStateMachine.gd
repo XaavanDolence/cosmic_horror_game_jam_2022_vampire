@@ -1,5 +1,6 @@
 extends StateMachine
 class_name PlayerStateMachine
+	
 
 func _ready():
 	add_state("idle")
@@ -24,6 +25,7 @@ func _input(event: InputEvent) -> void:
 	# Spitting
 	if [states.idle, states.walking, states.jump, states.fall, states.glide].has(curr_state) and event.is_action_pressed("spit"):
 		parent._animated_sprite.get_child(0).visible = true
+		parent.spawn_spit()
 	if event.is_action_released("spit"):
 		parent._animated_sprite.get_child(0).visible = false
 
