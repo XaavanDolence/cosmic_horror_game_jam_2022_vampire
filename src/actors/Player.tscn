@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://src/actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/actors/PlayerStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://src/actors/StateMachineBasedPlayer.gd" type="Script" id=2]
 [ext_resource path="res://assets/vampire-sheet.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=2]
@@ -110,7 +111,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80, 120.5 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
+light_mask = 0
+position = Vector2( -57, 127 )
+scale = Vector2( 0.25, 0.25 )
 collision_mask = 8
 script = ExtResource( 2 )
 
@@ -130,3 +134,6 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -120.5 )
 shape = SubResource( 1 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 1 )
