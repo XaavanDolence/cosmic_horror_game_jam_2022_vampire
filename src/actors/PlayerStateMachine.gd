@@ -101,3 +101,7 @@ func _exit_state(old_state, new_state):
 	match old_state:
 		states.glide:
 			parent.fall_multiplier = parent.FALL_DEFAULT # Resets fall multiplier for normal fall speed.
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.

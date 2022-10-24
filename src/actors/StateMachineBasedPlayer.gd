@@ -16,6 +16,7 @@ var spit_list = []
 # needed to initial spit_list to proper size
 func _ready():
 	spit_list.resize(MAX_SPIT)
+	
 
 # handle spit mechanics 
 func spawn_spit():
@@ -67,6 +68,3 @@ func calculate_ycomp(is_jump_interrupted):
 	var new_y = _velocity.y + (gravity * get_physics_process_delta_time())
 	new_y *= fall_multiplier
 	return new_y
-
-
-
